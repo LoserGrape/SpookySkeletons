@@ -60,4 +60,4 @@ tool.Parent = character
 character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
 end
 
-AboutTab:AddParagraph("  Gloves That Dont Work With God-Mode ","Killstreak [The Kill Counter]  Reaper, Default, Plague,")
+MiscTab:AddParagraph("  Gloves That Dont Work With God-Mode ","Killstreak [The Kill Counter]  Reaper, Default, Plague,")
