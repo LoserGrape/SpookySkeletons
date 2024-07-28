@@ -34,7 +34,7 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-MIscTab:AddButton({
+MiscTab:AddButton({
 	Name = "God-Mode",
 	Callback = function()
       	invincibility()
