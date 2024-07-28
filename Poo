@@ -40,3 +40,22 @@ MIscTab:AddButton({
       	invincibility()
   	end    
 })
+
+function invincibility()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local teleport = game.Workspace.Lobby.Teleport1
+
+if character.isInArena.Value ~= true then
+character.HumanoidRootPart.CFrame = teleport.CFrame
+end
+wait(0.5)
+local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+tool.Parent = game.ReplicatedStorage
+character.Humanoid.Health = 0
+wait(6)
+player = game.Players.LocalPlayer
+character = player.Character or player.CharacterAdded:Wait()
+tool.Parent = character
+character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
+end
