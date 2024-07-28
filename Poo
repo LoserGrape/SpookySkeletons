@@ -1,0 +1,29 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "WhaleScripts | Slap Battles", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local AboutTab = Window:MakeTab({
+	Name = "About",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+AboutTab:AddParagraph("  What The Fuck Is An Arbys? ","this script was coded by @WhaleRoblox on youtube so subscribe or else ill cut your balls off and tape them to a door knob")
+
+AboutTab:AddButton({
+	Name = "Print My YouTube URL",
+	Callback = function()
+      		print("YouTube.com/@WhaleRoblox")
+  	end    
+})
+
+AboutTab:AddParagraph("  Suck My Fat Ball-Hair! ","Hidden Hub [MM2] Can Suck The Compassing Area Betweenst My Ballsack And My Asscrack")
+
+AboutTab:AddParagraph("  Option One Or Two ","dont like me saying shit? ass? fuck? ballsack? click here!")
+
+AboutTab:AddButton({
+	Name = "1 Dont Like You Swearing MR! [Damn Right 1m A MR]",
+	Callback = function()
+      		print("wipdog")
+  	end    
+})
