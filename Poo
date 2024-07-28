@@ -34,52 +34,9 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local teleport = game.Workspace.Lobby.Teleport1
-
-OrionLib:MakeNotification({
-	Name = "doing stuff",
-	Content = "wait until smth happens",
-	Image = "rbxassetid://4483345998",
-	Time = 5
+MIscTab:AddButton({
+	Name = "God-Mode",
+	Callback = function()
+      	invincibility()
+  	end    
 })
-
-if character.isInArena.Value ~= true then
-character.HumanoidRootPart.CFrame = teleport.CFrame
-end
-wait(0.5)
-local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
-tool.Parent = game.ReplicatedStorage
-character.Humanoid.Health = 0
-wait(6)
-player = game.Players.LocalPlayer
-character = player.Character or player.CharacterAdded:Wait()
-tool.Parent = character
-character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
-end
-
-function killerfishGlove()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local tool = character:FindFirstChild("fish") or player.Backpack:FindFirstChild("fish")
-
-local fish = game.Workspace.Lobby.fish
-local fishStand = game.Workspace.Lobby.GloveStands.fish
-local leaderstats = player:FindFirstChild("leaderstats")
-local gloveStat = leaderstats:FindFirstChild("Glove")
-
-local userInputService = game:GetService("UserInputService")
-local canUseAbility = true
-userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
-if character.isInArena.Value == true then
-if gloveStat.Value == "fish" or gloveStat.Value == "Killerfish" then
-    if input.KeyCode == Enum.KeyCode.R and canUseAbility then
-            canUseAbility = false
-            game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
-            wait(3.05)
-            canUseAbility = true
-        end
-    end
-    end
-end)
