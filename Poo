@@ -76,9 +76,9 @@ MIscTab:AddSlider({
 })
 
 MiscTab:AddDropdown({
-	Name = "Slap Aura Friend",
-	Default = "Fight",
-	Options = {"Fight", "Not Fight"},
+	Name = "Slap Aura Options",
+	Default = "Fight Friend ",
+	Options = {"Fight Friend", "Ignore Friend"},
 	Callback = function(Value)
 SlapAuraFriend = Value
 	end    
