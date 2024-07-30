@@ -62,3 +62,14 @@ ATab:AddButton({
       		game:GetService("ReplicatedStorage").RetroAbility:FireServer("Rocket Launcher")
   	end    
 })
+
+ATab:AddParagraph("Glove Require Stuff","if the glove has a cooldown it will notify you when its done or when its started, dont use the abilitys when they are not done im TELLING YOU")
+
+ATab:AddButton({
+	Name = "Diamond's Ability",
+	Callback = function()
+     fireclickdetector(workspace.Lobby.Diamond.ClickDetector)
+    wait(0.01)
+  game:GetService("ReplicatedStorage").Rockmode:FireServer()
+  	end    
+})
