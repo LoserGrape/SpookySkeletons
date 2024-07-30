@@ -73,3 +73,12 @@ ATab:AddButton({
   game:GetService("ReplicatedStorage").Rockmode:FireServer()
   	end    
 })
+
+ATab:AddButton({
+	Name = "ZZZZZZZ",
+	Callback = function()
+    fireclickdetector(workspace.Lobby.ZZZZZZZ.ClickDetector)
+    wait(0.01)
+  game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+  	end    
+})
