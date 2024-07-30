@@ -12,8 +12,6 @@ ATab:AddLabel("Read The Tutorial Before Using!")
 
 ATab:AddParagraph("Tutorial","before using use teleport to main island, thats because if you enter the portal then click, it WILL kick you, and wait for the cooldown, it will notify when its done! ")
 
-ATab:AddLabel("SO GO TO >TUTORIAL TAB BEFORE")
-
 ATab:AddLabel("Free Abilitys")
 
 ATab:AddButton({
@@ -41,5 +39,26 @@ ATab:AddButton({
 	Name = "Blasphemy Piano",
 	Callback = function()
       		game:GetService("ReplicatedStorage").Piano:FireServer()
+  	end    
+})
+
+ATab:AddButton({
+	Name = "Retro Bomb",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").RetroAbility:FireServer("Bomb")
+  	end    
+})
+
+ATab:AddButton({
+	Name = "Retro Hammer",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
+  	end    
+})
+
+ATab:AddButton({
+	Name = "Retro Rocket",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").RetroAbility:FireServer("Rocket Launcher")
   	end    
 })
