@@ -1,64 +1,55 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "WhaleScripts | Slap Battles", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "The One Panel | WhaleScripts", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
-local AboutTab = Window:MakeTab({
-	Name = "About",
+local KTab = Window:MakeTab({
+	Name = "Killer",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-AboutTab:AddParagraph("  What The Fuck Is An Arbys? ","this script was coded by @WhaleRoblox on youtube so subscribe or else ill cut your balls off and tape them to a door knob")
+KTab:AddParagraph("Reminder","if you like ruining peoples day and making them endlessy shit their diaper and say "HACKER!!" ")
 
-AboutTab:AddButton({
-	Name = "Print My YouTube URL",
+KTab:AddButton({
+	Name = "Kill All [COLLISION ONLY]",
 	Callback = function()
-      		print("YouTube.com/@WhaleRoblox")
+      		loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
   	end    
 })
 
-AboutTab:AddParagraph("  Suck My Fat Ball-Hair! ","Hidden Hub [MM2] Can Suck The Compassing Area Betweenst My Ballsack And My Asscrack")
-
-AboutTab:AddParagraph("  Option One Or Two ","dont like me saying shit? ass? fuck? ballsack? click here!")
-
-AboutTab:AddButton({
-	Name = "i Dont Like You Swearing MR! [Damn Right im A MR]",
-	Callback = function()
-      		print("wipdog")
-  	end    
+OrionLib:MakeNotification({
+	Name = "Not Alright?",
+	Content = "those coolkidd's wanna bes need a require lmao",
+	Image = "rbxassetid://4483345998",
+	Time = 10
 })
 
-local MiscTab = Window:MakeTab({
-	Name = "Misc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+KTab:AddParagraph("Annoying Shit","HEY HEY HEY DUDE HEY DUDE GUESS WHAT HEY DUDE!")
 
-MiscTab:AddButton({
-	Name = "God-Mode",
-	Callback = function()
-      	invincibility()
-  	end    
-})
+-- Variable to keep track of the toggle state
+local toggleState = false
 
-function invincibility()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local teleport = game.Workspace.Lobby.Teleport1
-
-if character.isInArena.Value ~= true then
-character.HumanoidRootPart.CFrame = teleport.CFrame
-end
-wait(0.5)
-local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
-tool.Parent = game.ReplicatedStorage
-character.Humanoid.Health = 0
-wait(6)
-player = game.Players.LocalPlayer
-character = player.Character or player.CharacterAdded:Wait()
-tool.Parent = character
-character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
+-- Function to make the character say "WHALESCRIPTS" in a loop
+local function chatWhaleScripts()
+    while toggleState do
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("WHALESCRIPTS", "All")
+        wait(2)
+    end
 end
 
-MiscTab:AddParagraph("  Gloves That Dont Work With God-Mode ","Killstreak [The Kill Counter]  Reaper, Default, Plague, Overkill")
+-- Toggle callback function
+local function onToggle(state)
+    toggleState = state
+    if toggleState then
+        chatWhaleScripts()
+    end
+end
 
+KTab:AddToggle({
+	Name = "Spam Chat [My Name]",
+	Default = false,
+	Callback = onToggle
+	end    
+})
+
+OrionLib:Init()
