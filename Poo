@@ -1,55 +1,45 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "The One Panel | WhaleScripts", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Admin Powers | WhaleScripts", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local KTab = Window:MakeTab({
-	Name = "Killer",
-	Icon = "rbxassetid://4483345998",
+local ATab = Window:MakeTab({
+	Name = "Admin",
+	Icon = "rbxassetid://7733955740",
 	PremiumOnly = false
 })
 
-KTab:AddParagraph("Reminder","if you like ruining peoples day and making them endlessy shit their diaper and say "HACKER!!" ")
+ATab:AddLabel("Read The Tutorial Before Using!")
 
-KTab:AddButton({
-	Name = "Kill All [COLLISION ONLY]",
+ATab:AddParagraph("Tutorial","before using use teleport to main island, thats because if you enter the portal then click, it WILL kick you, and wait for the cooldown, it will notify when its done! ")
+
+ATab:AddLabel("SO GO TO >TUTORIAL TAB BEFORE")
+
+ATab:AddLabel("Free Abilitys")
+
+ATab:AddButton({
+	Name = "Scythe Weapon",
 	Callback = function()
-      		loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+      		game:GetService("ReplicatedStorage").Scythe:FireServer("ScytheWeapon")
   	end    
 })
 
-OrionLib:MakeNotification({
-	Name = "Not Alright?",
-	Content = "those coolkidd's wanna bes need a require lmao",
-	Image = "rbxassetid://4483345998",
-	Time = 10
+ATab:AddButton({
+	Name = "Rhythm Explosion",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
+  	end    
 })
 
-KTab:AddParagraph("Annoying Shit","HEY HEY HEY DUDE HEY DUDE GUESS WHAT HEY DUDE!")
-
--- Variable to keep track of the toggle state
-local toggleState = false
-
--- Function to make the character say "WHALESCRIPTS" in a loop
-local function chatWhaleScripts()
-    while toggleState do
-        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("WHALESCRIPTS", "All")
-        wait(2)
-    end
-end
-
--- Toggle callback function
-local function onToggle(state)
-    toggleState = state
-    if toggleState then
-        chatWhaleScripts()
-    end
-end
-
-KTab:AddToggle({
-	Name = "Spam Chat [My Name]",
-	Default = false,
-	Callback = onToggle
-	end    
+ATab:AddButton({
+	Name = "Null Ability",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").NullAbility:FireServer()
+  	end    
 })
 
-OrionLib:Init()
+ATab:AddButton({
+	Name = "Blasphemy Piano",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").Piano:FireServer()
+  	end    
+})
